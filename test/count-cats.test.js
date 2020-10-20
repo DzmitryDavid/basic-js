@@ -27,7 +27,7 @@ describe('Count cats!', () => {
   // Presence requirement
 
   describe('variable presence', () => {
-    it.optional('function countCats exists', () => {
+    it('function countCats exists', () => {
       expect(countCats).to.exist;
       expect(countCats).to.be.instanceOf(Function);
     });
@@ -36,7 +36,7 @@ describe('Count cats!', () => {
   //Specific requirements
 
   describe('base requirements', () => {
-    it.optional('level 0.1', () => {
+    it('level 0.1', () => {
       assert.equal(countCats([
         ['##', 'dd', '00'],
         ['^^', '..', 'ss'],
@@ -44,7 +44,7 @@ describe('Count cats!', () => {
       ]), 1);
     });
 
-    it.optional('level 0.2', () => {
+    it('level 0.2', () => {
       assert.equal(countCats([
         ['##', 'dd', '00'],
         ['^ ^', '..', 'ss'],
@@ -52,7 +52,7 @@ describe('Count cats!', () => {
       ]), 0);
     });
 
-    it.optional('level 0.3', () => {
+    it('level 0.3', () => {
       assert.equal(countCats([
         ['##', 'dd', '00'],
         [' ^^ ', '..', 'ss'],
@@ -60,7 +60,7 @@ describe('Count cats!', () => {
       ]), 0);
     });
 
-    it.optional('level 0.4', () => {
+    it('level 0.4', () => {
       assert.equal(countCats([
         ['##', 'dd', '00'],
         ['^', '^', 'ss'],
@@ -68,13 +68,13 @@ describe('Count cats!', () => {
       ]), 0);
     });
 
-    it.optional('level 0.5', () => {
+    it('level 0.5', () => {
       assert.equal(countCats([]), 0);
     });
   });
 
   describe('functional requirements', () => {   
-    it.optional('level 1', () => {
+    it('level 1', () => {
       assert.equal(countCats([
         ["^^", ".", null, 0, false, "", NaN, "^^", 2, true, "dasdas", 1],
         [2, null, 0, 1, ".", "dasdas", true, NaN, "", false, "^^", "^^"],
@@ -87,7 +87,7 @@ describe('Count cats!', () => {
       ]), 16);
      });
 
-    it.optional('level 2', () => {
+    it('level 2', () => {
       assert.equal(countCats([
         ["^^", ".", null, 0, false, "", NaN, 2, true, "dasdas", 1],
         [2, NaN, "", false, "^^", "^^"],
@@ -100,7 +100,7 @@ describe('Count cats!', () => {
       ]), 8);
     });
 
-    it.optional('level 3', () => {
+    it('level 3', () => {
       const stringSet = ['aa', '##', false, NaN, 2, 3, '^ ^', undefined, 54, ' ^^'];
       for (let i = 3; i < 60; i++) {
         const { backyard, count } = fakeRandom({ rows: i, cols: i, stringSet });
